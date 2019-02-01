@@ -11,4 +11,16 @@ pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
   } else {
     price += 16;
   }
+  if (inputtedToppings = "pepperoni") {
+    price += 1;
+  } else if (inputtedToppings = "bacon") {
+    price += 1;
+  } else if (inputtedToppings = "olives") {
+    price += 1;
+  } else if (inputtedToppings = "pineapple") {
+    price += 1;
+  } else if (inputtedToppings = "anchovy") {
+    price += 1;
+  } else if (inputtedToppings = "extraCheese") {
+    price += 2;
 }
