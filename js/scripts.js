@@ -12,20 +12,23 @@ Pizza.prototype.pizzaPrice = function(inputtedSize, toppingResponses) {
   } else if (inputtedSize === "large") {
     price += 16;
   }
-  for (i = 0; i < toppingResponses.length + 1; i ++) {
-  if (toppingResponses.includes("pepperoni")) {
-    price += 1;
-  } else if (toppingResponses.includes("bacon")) {
-    price += 1;
-  } else if (toppingResponses.includes("olives")) {
-    price += 1;
-  } else if (toppingResponses.includes("pineapple")) {
-    price += 1;
-  } else if (toppingResponses.includes("anchovy")) {
-    price += 1;
-  } else if (toppingResponses.includes("extraCheese")) {
-    price += 2;
+  if (toppingResponses.includes("extraCheese")) {
+    price += 5;
   }
+  if (toppingResponses.includes("bacon")) {
+    price += 1;
+  }
+   if (toppingResponses.includes("olives")) {
+    price += 1;
+  }
+   if (toppingResponses.includes("pineapple")) {
+    price += 1;
+  }
+   if (toppingResponses.includes("anchovy")) {
+    price += 1;
+  }
+   if (toppingResponses.includes("pepperoni")) {
+    price += 1;
   }
 }
 console.log(price);
