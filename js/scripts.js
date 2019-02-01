@@ -30,8 +30,10 @@ $(document).ready(function() {
   $("formOne").submit(function(event) {
     event,preventDefault();
     var inputtedSize = $("size").val();
+    var toppingResponses = [];
     $("input:checkbox[name=topping]:checked").each(function(){
     var inputtedToppings = $(this).val();
+    toppingResponses.push(inputtedToppings);
     myPizza = new Pizza(inputtedSize, inputtedToppings);
     myPizza.pizzaPrice(inputtedSize, inputtedToppings);
     console.log(price);
