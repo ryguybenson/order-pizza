@@ -1,9 +1,9 @@
-var pizza = new Pizza(toppings,size) {
+function Pizza(toppings,size) {
   this.toppings = toppings;
   this.size = size;
 };
 var price = 0;
-pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
+Pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
   if (inputtedSize === "small") {
     price += 8;
   } else if (inputtedSize === "medium") {
@@ -25,12 +25,16 @@ pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
     price += 2;
   }
 }
+
 $(document).ready(function() {
   $("formOne").submit(function(event) {
     event,preventDefault();
     var inputtedSize = $("size").val();
     $("input:checkbox[name=topping]:checked").each(function(){
     var inputtedToppings = $(this).val();
-
-  })
-})
+    myPizza = new Pizza(inputtedSize, inputtedToppings);
+    myPizza.pizzaPrice(inputtedSize, inputtedToppings);
+    console.log(price);
+    });
+  });
+});
