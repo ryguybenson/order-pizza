@@ -9,9 +9,9 @@ Pizza.prototype.pizzaSize = function(Pizza) {
   if (this.toppingResponses === "small") {
     price += 8;
     console.log(price);
-  } else if (this.size === "medium") {
+  } else if (this.toppingResponses === "medium") {
     price += 12;
-  } else if (this.size === "large") {
+  } else if (this.toppingResponses === "large") {
     price += 16;
   } return price;
   console.log(price);
@@ -52,5 +52,6 @@ $(document).ready(function() {
     myPizza.pizzaToppings();
     myPizza.pizzaSize();
     $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + price + " dollars");
+    price = 0;
   });
 });
