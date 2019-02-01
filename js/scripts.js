@@ -16,6 +16,7 @@ Pizza.prototype.pizzaSize = function(Pizza) {
   } return price;
   console.log(price);
 }
+//I AM SO CONFUSED WHY THIS.SIZE AND THIS.TOPPINGRESPONSES ARE BACKWARDS???????
 Pizza.prototype.pizzaToppings = function(Pizza) {
   if (this.size.includes("extra-cheese")) {
     price += 3;
@@ -37,9 +38,6 @@ Pizza.prototype.pizzaToppings = function(Pizza) {
   } return price;
   console.log(price);
 }
-
-
-
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -50,11 +48,9 @@ $(document).ready(function() {
       console.log(inputtedToppings);
       toppingResponses.push(inputtedToppings);
     });
-    console.log(toppingResponses);
       var myPizza = new Pizza(size, toppingResponses);
     myPizza.pizzaToppings();
     myPizza.pizzaSize();
-    console.log(price);
     $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + price + " dollars");
   });
 });
