@@ -10,9 +10,18 @@
   </head>
   <body>
     <div class="container">
-     <div class="jumbotron">
-       <h1>Customize Your Pizza</h1>
+     <div class="well">
+       <h1 id="custom">Customize Your Pizza</h1>
      </div>
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <td><img src="img/pizza1.jpg" alt=""></td>
+          <td><img src="img/pizza2.jpg" alt=""></td>
+          <td><img src="img/pizza3.jpg" alt=""></td>
+        </tr>
+      </table>
     </div>
     <div class="container">
      <div class="well">
@@ -30,15 +39,14 @@
          <input type="checkbox" name="topping" value="pepperoni"> Pepperoni<br>
          <input type="checkbox" name="topping" value="bacon"> Bacon<br>
          <input type="checkbox" name="topping" value="pineapple"> Pineapple<br>
-         <input type="checkbox" name="topping" value="olives"> Olives<br>
+         <input type="checkbox" name="topping" value="olive"> Olives<br>
          <input type="checkbox" name="topping" value="anchovy"> Anchovy<br>
          <input type="checkbox" name="topping" value="extra-cheese"> Extra Cheese<br>
         </div>
         <button type="submit">Finish Pizza</button>
-       </form>
+       </form> <br>
        <div id="showPizza">
-       <h3>Your Pizza</h3>
-       <p><span id="ordered"></span></p>
+       <h4 id="final"><span id="ordered"></span></h4>
 
        </div>
 

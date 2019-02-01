@@ -24,7 +24,7 @@ Pizza.prototype.pizzaToppings = function(Pizza) {
   if (this.size.includes("bacon")) {
     price += 2;
   }
-   if (this.size.includes("olives")) {
+   if (this.size.includes("olive")) {
     price += 1;
   }
    if (this.size.includes("pineapple")) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
       var myPizza = new Pizza(size, toppingResponses);
     myPizza.pizzaToppings();
     myPizza.pizzaSize();
-    $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + price + " dollars");
+    $("#ordered").text("Your " + size + " " + toppingResponses + " pizza will cost you " + price + " dollars");
     price = 0;
   });
 });
