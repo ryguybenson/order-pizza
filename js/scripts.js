@@ -1,40 +1,41 @@
 function Pizza(toppingResponses, size) {
   this.toppingResponses = toppingResponses,
-  this.size = size,
-  this.price = 0;
-  console.log(this.price);
+  this.size = size;
+  console.log(this.toppingResponses);
+  console.log(this.size);
 }
-
-Pizza.prototype.pizzaSize = function() {
-  if (this.size === "small") {
-    this.price += 8;
+var price = 0;
+Pizza.prototype.pizzaSize = function(Pizza) {
+  if (this.toppingResponses === "small") {
+    price += 8;
+    console.log(price);
   } else if (this.size === "medium") {
-    this.price += 12;
+    price += 12;
   } else if (this.size === "large") {
-    this.price += 16;
-  } return this.price;
-  console.log(this.price);
+    price += 16;
+  } return price;
+  console.log(price);
 }
-Pizza.prototype.pizzaToppings = function() {
-  if (this.toppingResponses.includes("extra-cheese")) {
-    this.price += 3;
+Pizza.prototype.pizzaToppings = function(Pizza) {
+  if (this.size.includes("extra-cheese")) {
+    price += 3;
   }
-  if (this.toppingResponses.includes("bacon")) {
-    this.price += 2;
+  if (this.size.includes("bacon")) {
+    price += 2;
   }
-   if (this.toppingResponses.includes("olives")) {
-    this.price += 1;
+   if (this.size.includes("olives")) {
+    price += 1;
   }
-   if (this.toppingResponses.includes("pineapple")) {
-    this.price += 1;
+   if (this.size.includes("pineapple")) {
+    price += 1;
   }
-   if (this.toppingResponses.includes("anchovy")) {
-    this.price += 1;
+   if (this.size.includes("anchovy")) {
+    price += 1;
   }
-   if (this.toppingResponses.includes("pepperoni")) {
-    this.price += 1;
-  } return this.price;
-  console.log(this.price);
+   if (this.size.includes("pepperoni")) {
+    price += 1;
+  } return price;
+  console.log(price);
 }
 
 
@@ -53,7 +54,7 @@ $(document).ready(function() {
       var myPizza = new Pizza(size, toppingResponses);
     myPizza.pizzaToppings();
     myPizza.pizzaSize();
-    console.log(this.price);
-    $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + this.price + " dollars");
+    console.log(price);
+    $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + price + " dollars");
   });
 });
