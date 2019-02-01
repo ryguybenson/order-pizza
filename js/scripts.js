@@ -32,11 +32,16 @@ Pizza.prototype.pizzaPrice = function(size, toppingResponses) {
   }
 }
 console.log(price);
+
+function showPizza(size, toppingResponses) {
+    $("#pizzaSize").text(size);
+    $("#toppings").text(toppingResponses);
+}
+
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     var size = $("#size").val();
-      alert(size);
     var toppingResponses = [];
     $("input:checkbox[name=topping]:checked").each(function(){
       var inputtedToppings = $(this).val();
@@ -47,5 +52,6 @@ $(document).ready(function() {
     myPizza = new Pizza(size,toppingResponses);
     myPizza.pizzaPrice(size, toppingResponses);
     console.log(price);
+    showPizza(size, toppingResponses);
   });
 });
