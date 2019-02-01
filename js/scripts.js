@@ -3,29 +3,30 @@ function Pizza(toppings,size) {
   this.size = size;
 };
 var price = 0;
-Pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
+Pizza.prototype.pizzaPrice = function (inputtedSize, toppingResponses) {
   if (inputtedSize === "small") {
     price += 8;
+    console.log(price);
   } else if (inputtedSize === "medium") {
     price += 12;
   } else {
     price += 16;
   }
-  if (inputtedToppings = "pepperoni") {
+  if (toppingResponses.split("").includes("pepperoni")) {
     price += 1;
-  } else if (inputtedToppings = "bacon") {
+  } else if toppingResponses.split("").includes("bacon")) {
     price += 1;
-  } else if (inputtedToppings = "olives") {
+  } else if (toppingResponses.split("").includes("olives")) {
     price += 1;
-  } else if (inputtedToppings = "pineapple") {
+  } else if (toppingResponses.split("").includes("pineapple")) {
     price += 1;
-  } else if (inputtedToppings = "anchovy") {
+  } else if (toppingResponses.split("").includes("anchovy")) {
     price += 1;
-  } else if (inputtedToppings = "extraCheese") {
+  } else if (toppingResponses.split("").includes("extraCheese")) {
     price += 2;
   }
 }
-
+console.log(price);
 $(document).ready(function() {
   $("formOne").submit(function(event) {
     event,preventDefault();
