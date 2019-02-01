@@ -23,4 +23,14 @@ pizza.prototype.pizzaPrice = function (inputtedSize, inputtedToppings) {
     price += 1;
   } else if (inputtedToppings = "extraCheese") {
     price += 2;
+  }
 }
+$(document).ready(function() {
+  $("formOne").submit(function(event) {
+    event,preventDefault();
+    var inputtedSize = $("size").val();
+    $("input:checkbox[name=topping]:checked").each(function(){
+    var inputtedToppings = $(this).val();
+
+  })
+})
