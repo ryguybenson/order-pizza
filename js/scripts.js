@@ -1,42 +1,43 @@
-function Pizza(topping,size) {
-  this.topping = topping;
-  this.size = size;
-};
-var price = 0;
-Pizza.prototype.pizzaPrice = function(size, toppingResponses) {
-  if (size === "small") {
-    price += 8;
-    console.log(price);
-  } else if (size === "medium") {
-    price += 12;
-  } else if (size === "large") {
-    price += 16;
-  }
-  if (toppingResponses.includes("extraCheese")) {
-    price += 3;
-  }
-  if (toppingResponses.includes("bacon")) {
-    price += 2;
-  }
-   if (toppingResponses.includes("olives")) {
-    price += 1;
-  }
-   if (toppingResponses.includes("pineapple")) {
-    price += 1;
-  }
-   if (toppingResponses.includes("anchovy")) {
-    price += 1;
-  }
-   if (toppingResponses.includes("pepperoni")) {
-    price += 1;
-  }
+function Pizza(toppingResponses, size) {
+  this.toppingResponses = toppingResponses,
+  this.size = size,
+  this.price = 0;
+  console.log(this.price);
 }
-console.log(price);
 
-function showPizza(size, toppingResponses) {
-    $("#pizzaSize").text(size);
-    $("#toppings").text(toppingResponses);
+Pizza.prototype.pizzaSize = function() {
+  if (this.size === "small") {
+    this.price += 8;
+  } else if (this.size === "medium") {
+    this.price += 12;
+  } else if (this.size === "large") {
+    this.price += 16;
+  } return this.price;
+  console.log(this.price);
 }
+Pizza.prototype.pizzaToppings = function() {
+  if (this.toppingResponses.includes("extra-cheese")) {
+    this.price += 3;
+  }
+  if (this.toppingResponses.includes("bacon")) {
+    this.price += 2;
+  }
+   if (this.toppingResponses.includes("olives")) {
+    this.price += 1;
+  }
+   if (this.toppingResponses.includes("pineapple")) {
+    this.price += 1;
+  }
+   if (this.toppingResponses.includes("anchovy")) {
+    this.price += 1;
+  }
+   if (this.toppingResponses.includes("pepperoni")) {
+    this.price += 1;
+  } return this.price;
+  console.log(this.price);
+}
+
+
 
 $(document).ready(function() {
   $("form").submit(function(event) {
@@ -49,9 +50,10 @@ $(document).ready(function() {
       toppingResponses.push(inputtedToppings);
     });
     console.log(toppingResponses);
-    myPizza = new Pizza(size,toppingResponses);
-    myPizza.pizzaPrice(size, toppingResponses);
-    console.log(price);
-    showPizza(size, toppingResponses);
+      var myPizza = new Pizza(size, toppingResponses);
+    myPizza.pizzaToppings();
+    myPizza.pizzaSize();
+    console.log(this.price);
+    $("#ordered").text("Your " + size + " pizza with " + toppingResponses + " will cost you " + this.price + " dollars");
   });
 });
