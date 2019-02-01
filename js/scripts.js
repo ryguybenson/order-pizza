@@ -3,41 +3,46 @@ function Pizza(toppings,size) {
   this.size = size;
 };
 var price = 0;
-Pizza.prototype.pizzaPrice = function (inputtedSize, toppingResponses) {
+Pizza.prototype.pizzaPrice = function(inputtedSize, toppingResponses) {
   if (inputtedSize === "small") {
     price += 8;
     console.log(price);
   } else if (inputtedSize === "medium") {
     price += 12;
-  } else {
+  } else if (inputtedSize === "large") {
     price += 16;
   }
-  if (toppingResponses.split("").includes("pepperoni")) {
+  for (i = 0; i < toppingResponses.length + 1; i ++) {
+  if (toppingResponses.includes("pepperoni")) {
     price += 1;
-  } else if toppingResponses.split("").includes("bacon")) {
+  } else if (toppingResponses.includes("bacon")) {
     price += 1;
-  } else if (toppingResponses.split("").includes("olives")) {
+  } else if (toppingResponses.includes("olives")) {
     price += 1;
-  } else if (toppingResponses.split("").includes("pineapple")) {
+  } else if (toppingResponses.includes("pineapple")) {
     price += 1;
-  } else if (toppingResponses.split("").includes("anchovy")) {
+  } else if (toppingResponses.includes("anchovy")) {
     price += 1;
-  } else if (toppingResponses.split("").includes("extraCheese")) {
+  } else if (toppingResponses.includes("extraCheese")) {
     price += 2;
+  }
   }
 }
 console.log(price);
 $(document).ready(function() {
-  $("formOne").submit(function(event) {
-    event,preventDefault();
+  $("form").submit(function(event) {
+    event.preventDefault();
     var inputtedSize = $("size").val();
+      alert(inputtedSize);
     var toppingResponses = [];
     $("input:checkbox[name=topping]:checked").each(function(){
-    var inputtedToppings = $(this).val();
-    toppingResponses.push(inputtedToppings);
-    myPizza = new Pizza(inputtedSize, inputtedToppings);
-    myPizza.pizzaPrice(inputtedSize, inputtedToppings);
-    console.log(price);
+      var inputtedToppings = $(this).val();
+      console.log(inputtedToppings);
+      toppingResponses.push(inputtedToppings);
     });
+    console.log(toppingResponses);
+    myPizza = new Pizza(inputtedSize,toppingResponses);
+    myPizza.pizzaPrice(inputtedSize, toppingResponses);
+    console.log(price);
   });
 });
