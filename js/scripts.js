@@ -1,43 +1,51 @@
 function Pizza(toppingResponses, size) {
   this.toppingResponses = toppingResponses,
-  this.size = size;
+  this.size = size,
+  this.price = 0;
   console.log(this.toppingResponses);
   console.log(this.size);
 }
-var price = 0;
-Pizza.prototype.pizzaSize = function(Pizza) {
+
+Pizza.prototype.pizzaSize = function() {
   if (this.toppingResponses === "small") {
-    price += 8;
-    console.log(price);
+    this.price += 8;
+ console.log(this.price);
   } else if (this.toppingResponses === "medium") {
-    price += 12;
+    this.price += 12;
   } else if (this.toppingResponses === "large") {
-    price += 16;
-  } return price;
-  console.log(price);
+    this.price += 16;
+  }
+  return (this.price);
 }
 //I AM SO CONFUSED WHY THIS.SIZE AND THIS.TOPPINGRESPONSES ARE BACKWARDS???????
-Pizza.prototype.pizzaToppings = function(Pizza) {
+Pizza.prototype.pizzaToppings = function() {
   if (this.size.includes("extra-cheese")) {
-    price += 3;
+    this.price += 3;
   }
   if (this.size.includes("bacon")) {
-    price += 2;
+    this.price += 2;
   }
    if (this.size.includes("olive")) {
-    price += 1;
+    this.price += 1;
   }
    if (this.size.includes("pineapple")) {
-    price += 1;
+    this.price += 1;
   }
    if (this.size.includes("anchovy")) {
-    price += 1;
+    this.price += 1;
   }
    if (this.size.includes("pepperoni")) {
-    price += 1;
-  } return price;
-  console.log(price);
+    this.price += 1;
+  }
+  return this.price;
+  console.log(this.price);
 }
+
+Pizza.prototype.totalPrice = function() {
+  return this.price;
+  console.log(this.price);
+}
+
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -48,10 +56,12 @@ $(document).ready(function() {
       console.log(inputtedToppings);
       toppingResponses.push(inputtedToppings);
     });
-      var myPizza = new Pizza(size, toppingResponses);
+    var myPizza = new Pizza(size, toppingResponses);
     myPizza.pizzaToppings();
+    myPizza.totalPrice();
     myPizza.pizzaSize();
-    $("#ordered").text("Your " + size + " " + toppingResponses + " pizza will cost you " + price + " dollars");
-    price = 0;
+    Pizza();
+    $("#ordered").text("Your " + size + " " + toppingResponses + " pizza will cost you " + this.price + " dollars");
+    this.price = 0;
   });
 });
