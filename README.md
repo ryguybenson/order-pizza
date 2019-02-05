@@ -12,8 +12,8 @@ _This application gathers input for size of pizza and toppings for the pizza to 
 * This application will allow users to select a pizza size.
 * This application will allow users to select toppings for their pizza.
 * This application will gather the users input and return a price based on the selected size and toppings.
-  -input: medium size and pepperoni topping:
-  -output: Your medium pepperoni pizza will cost 13 dollars_
+  * -input: medium size and pepperoni topping:
+  * -output: Your medium pepperoni pizza will cost 13 dollars_
 
 ## Setup/Installation Requirements
 
