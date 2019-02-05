@@ -1,6 +1,6 @@
 # _order-pizza_
 
-#### , This application gathers input from a user and returns a price based on their input. 02/05/2019_
+####  _This application gathers input from a user and returns a price based on their input. 02/05/2019_
 
 #### By _**{List of contributors}**_
 
@@ -12,8 +12,8 @@ _This application gathers input for size of pizza and toppings for the pizza to 
 * This application will allow users to select a pizza size.
 * This application will allow users to select toppings for their pizza.
 * This application will gather the users input and return a price based on the selected size and toppings.
-  *-input: medium size and pepperoni topping:
-  *-output: Your medium pepperoni pizza will cost 13 dollars
+  -input: medium size and pepperoni topping:
+  -output: Your medium pepperoni pizza will cost 13 dollars_
 
 ## Setup/Installation Requirements
 
@@ -22,7 +22,6 @@ _This application gathers input for size of pizza and toppings for the pizza to 
 * _Open the index.html in your preferred web browser to view the application._
 
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
