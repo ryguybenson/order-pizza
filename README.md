@@ -13,7 +13,7 @@ _This application gathers input for size of pizza and toppings for the pizza to 
   * _-Input: small_
   * _-Output: 8 dollars_
 * _This application will allow users to select toppings for their pizza and attach a price to it._
-  * _-Input: Anchovy, Pineaple, Extra Cheese_
+  * _-Input: anchovy, pineaple, extra cheese_
   * _-Output: 5 dollars_
 * _This application will gather the users input and return a price based on the selected size and toppings._
   * _-Input: medium size and pepperoni topping_
